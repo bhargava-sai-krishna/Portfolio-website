@@ -454,9 +454,10 @@ const CursorFollower = () => {
     // Set canvas style
     canvas.style.backgroundColor = 'transparent';
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, '#00ff88');
-    gradient.addColorStop(1, '#00cc66');
+    gradient.addColorStop(0, '#ffffff');
+    gradient.addColorStop(1, '#e5e5e5');
     ctx.strokeStyle = gradient;
+    ctx.lineWidth = 3;
 
     const legNum = Math.floor(1 + Math.random() * 12);
     const critter = createReptile(8 / Math.sqrt(legNum), legNum, Math.floor(2 + Math.random() * legNum * 8));
@@ -485,7 +486,7 @@ const CursorFollower = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-50"
-      style={{ mixBlendMode: 'multiply' }}
+      style={{ mixBlendMode: 'normal' }}
     />
   );
 };
