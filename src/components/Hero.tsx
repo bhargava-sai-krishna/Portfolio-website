@@ -1,12 +1,19 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
+// Using placeholder image since upload didn't work
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center px-6">
       <Card className="max-w-4xl w-full p-8 bg-card/80 backdrop-blur-sm">
         <div className="text-center space-y-6">
+          <div className="flex justify-center mb-6">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center border-4 border-primary/20 shadow-lg">
+              <span className="text-white text-2xl md:text-3xl font-bold">SK</span>
+            </div>
+          </div>
+          
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Sanka Bhargava Sai Krishna Lakshmi Narayana
           </h1>
