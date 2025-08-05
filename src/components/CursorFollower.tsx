@@ -70,7 +70,6 @@ const CursorFollower = () => {
   const critterRef = useRef<Creature | null>(null);
   const animationIdRef = useRef<number>();
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -90,18 +89,6 @@ const CursorFollower = () => {
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
-    };
-
-    const handleScroll = () => {
-      // Clear existing timeout
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-      
-      // Keep tracking mouse position during and after scroll
-      scrollTimeoutRef.current = setTimeout(() => {
-        // Resume normal tracking after scroll stops
-      }, 100);
     };
 
     // Advanced reptile implementation
@@ -316,11 +303,11 @@ const CursorFollower = () => {
         this.x = x;
         this.y = y;
         this.absAngle = angle;
-        this.fAccel = fAccel * 0.4;
+        this.fAccel = fAccel;
         this.fFric = fFric;
         this.fRes = fRes;
         this.fThresh = fThresh;
-        this.rAccel = rAccel * 0.6;
+        this.rAccel = rAccel;
         this.rFric = rFric;
         this.rRes = rRes;
         this.rThresh = rThresh;
@@ -406,13 +393,13 @@ const CursorFollower = () => {
         window.innerWidth / 2,
         window.innerHeight / 2,
         0,
-        s * 6,
+        s * 10,
         s * 2,
-        0.7,
+        0.5,
         16,
-        0.3,
+        0.5,
         0.085,
-        0.7,
+        0.5,
         0.3
       );
       let spinal: any = critter;
@@ -484,16 +471,11 @@ const CursorFollower = () => {
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', handleScroll, { passive: true });
     animate();
 
     return () => {
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('scroll', handleScroll);
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
       }
