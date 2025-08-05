@@ -98,14 +98,9 @@ const CursorFollower = () => {
         clearTimeout(scrollTimeoutRef.current);
       }
       
-      // Set a timeout to update mouse position after scrolling stops
+      // Keep tracking mouse position during and after scroll
       scrollTimeoutRef.current = setTimeout(() => {
-        // Get current mouse position relative to viewport
-        const rect = canvas.getBoundingClientRect();
-        if (mouseRef.current.x >= 0 && mouseRef.current.y >= 0) {
-          // Keep the last known mouse position
-          mouseRef.current = { x: mouseRef.current.x, y: mouseRef.current.y };
-        }
+        // Resume normal tracking after scroll stops
       }, 100);
     };
 
