@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 
 const Projects = () => {
+  //  {
+  //     title: "",
+  //     description: "",
+  //     technologies: [""],
+  //     github: "",
+  //     timeline: ""
+  //   }
   const projects = [
     {
       title: "E-Hub with Java",
@@ -25,6 +32,27 @@ const Projects = () => {
       technologies: ["Python", "Flask", "JavaScript", "Google Cloud API", "Cryptography"],
       github: "https://github.com/bhargava-sai-krishna/secure-text-transfer-using-deffie-hill-man",
       timeline: "Feb 2024 - May 2024"
+    },
+    {
+      title: "Admission Prediction",
+      description: "Developed 4 ML models to prediction of a student's admission to a spesfic university based on scores like GRE, TOFEL, SOP, CGPA. Used datasets with more than 10,000 students. Used algorithms like Gradient Boosting, Naive Bayes, SVM, Neural Netwroks with the accuracy of 92% accuracy using Naive Bayes, 98% with Gradient Boost, 93% accuracy with Neural Network, 91% accuracy with SVM.",
+      technologies: ["Python"],
+      github: "https://github.com/bhargava-sai-krishna/S5-19CSE305-ML-PROJECT",
+      timeline: "SEP 2023 - JAN 2024"
+    },
+    {
+      title: "Emotion Detection Deep Learning CNN",
+      description: "Created 4 deep learning models to detect the emotion of people. Used architecture AlexNet, ResNet, VGG, and a custom architecture with over 99% accuracy. The custom model incorporated a combination of convolutional, batch normalization, ReLU, pooling layers, global average pooling, dropout, and a fully connected layer for final classification.",
+      technologies: ["Python"],
+      github: "https://github.com/bhargava-sai-krishna/Emotion-Detection-Deep-Learning-CNN",
+      timeline: "Jun 2023 – Sep 2023"
+    },
+    {
+      title: "TeleConsultancy MR",
+      description: "Identified the lack of clarity in traditional tele-consultations, where patients struggle to understand complex medical instructions without visual aid using microsoft Hololens.  Developed a web-based video chat application integrating a 3D human body model using Microsoft HoloLens and a Flask-based Python backend. Utilized ZEGO Cloud for seamless real-time audio/video communication.",
+      technologies: ["Python", "C#", "Unity Engine", "Zego cloud"],
+      github: "https://github.com/bhargava-sai-krishna/TeleConsultancy-MR",
+      timeline: "Aug 2024 – Mar 2025"
     }
   ];
 
