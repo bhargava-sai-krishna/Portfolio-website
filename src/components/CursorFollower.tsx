@@ -454,8 +454,8 @@ const CursorFollower = () => {
     // Set canvas style
     canvas.style.backgroundColor = 'transparent';
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, '#10b981');
-    gradient.addColorStop(1, '#059669');
+    gradient.addColorStop(0, '#00ff88');
+    gradient.addColorStop(1, '#00cc66');
     ctx.strokeStyle = gradient;
 
     const legNum = Math.floor(1 + Math.random() * 12);
