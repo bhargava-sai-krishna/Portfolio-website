@@ -321,11 +321,11 @@ const CursorFollower = () => {
         this.x = x;
         this.y = y;
         this.absAngle = angle;
-        this.fAccel = fAccel * 0.3;
+        this.fAccel = fAccel * 0.4;
         this.fFric = fFric;
         this.fRes = fRes;
         this.fThresh = fThresh;
-        this.rAccel = rAccel * 0.5;
+        this.rAccel = rAccel * 0.6;
         this.rFric = rFric;
         this.rRes = rRes;
         this.rThresh = rThresh;
